@@ -1,0 +1,9 @@
+# Adds a headless Android 14 emulator to the build image, for the install check (V-7) and screenshots (V-6).
+FROM sharpcalc-build
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    libpulse0 libgl1 libx11-6 libxcb1 libxdamage1 libnss3 libxcomposite1 libxcursor1 libxi6 libxext6 libxfixes3 \
+    libxkbfile1 libdbus-1-3 libfontconfig1 libxtst6 libxrender1 libasound2 libdrm2 libgbm1 libxkbcommon0 \
+ && rm -rf /var/lib/apt/lists/*
+RUN $ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager "emulator" "system-images;android-34;default;x86_64" > /dev/null \
+ && chmod -R a+rX $ANDROID_HOME
+ENV PATH=$PATH:/opt/android-sdk/emulator:/opt/android-sdk/cmdline-tools/latest/bin

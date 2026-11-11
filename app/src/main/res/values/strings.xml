@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Quadline Calc</string>
+    <string name="about_title">Quadline Calc</string>
+    <string name="about_text">An unofficial four-line scientific calculator.\n\nThis app is unaffiliated: it is not made, endorsed or sponsored by Sharp Corporation or any other calculator maker, and it uses none of their logos or marks.\n\nIt asks for no permissions, shows no ads and sends nothing off this device.</string>
+    <string name="about_close">Close</string>
+    <string name="about_button">About this app</string>
+</resources>
